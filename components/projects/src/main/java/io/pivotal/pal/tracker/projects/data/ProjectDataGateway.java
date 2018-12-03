@@ -31,7 +31,7 @@ public class ProjectDataGateway {
                 "insert into projects (account_id, name, active) values (?, ?, ?)", RETURN_GENERATED_KEYS);
             ps.setLong(1, fields.accountId);
             ps.setString(2, fields.name);
-            ps.setBoolean(3, false);
+            ps.setBoolean(3, true);
             return ps;
         }, keyholder);
 
