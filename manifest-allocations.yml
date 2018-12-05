@@ -3,10 +3,15 @@ applications:
   path: ./applications/allocations-server/build/libs/allocations-server.jar
   routes:
   - route: pal-allocations-kiran.apps.pikes.pal.pivotal.io/
+  env:
+    GRANT_TYPE: client_credentials
+    SECURITY_USER_NAME: actuator
+    SECURITY_USER_PASSWORD: operations4red
   memory: 1G
   instances: 1
   services:
   - tracker-allocations-database
   - tracker-service-registry
   - tracker-circuit-breaker-dashboard
+  - tracker-sso
 
